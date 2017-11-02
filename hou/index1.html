@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="../../js/jquery-1.11.3.js"></script>-->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+
+    <style>
+        .box{
+            width: 1000px;
+            border: 1px solid #111;
+            padding: 5px;
+        }
+        .box div{
+            border-bottom: 1px solid #c0c0c0;
+        }
+    </style>
+<script>
+    $(function(){
+        $('#btn').click(function(){
+            var a=$('#txt').val()
+            var a1=$('#txt1').val()
+            $.ajax({
+                url:"http://localhost:3000/item/list1",
+                type:"POST",
+                data:{
+                    abc:a,
+                    abb:a1
+                },
+                success:function(e){
+                    //console.log(e)
+
+                }
+            })
+        })
+
+
+    })
+</script>
+</head>
+<body>
+<div id="box" class="box">
+    <h3>标题：</h3>
+    <input id="txt" type="text" placeholder="标题">
+    <h3>内容：</h3>
+    <input id="txt1" type="text" placeholder="内容">
+    <button id="btn">添加</button>
+</div>
+
+
+</body>
+</html>
